@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>pers.tbsowa.root</groupId>
+  <artifactId>tbsowa-root</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>tbsowa-root</name>
+  <description>Build for personal learning, Sowa equals software</description>
+  
+  <url>http://maven.apache.org</url>
+
+  <!-- 模块聚合 -->
+  <modules>
+  	<module>../tbsowa-core</module>
+  </modules>
+  
+  
+  <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	<java.version>1.8</java.version>
+  </properties>
+  
+  <parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId>
+	<version>1.5.4.RELEASE</version>
+  </parent>
+  
+  <!-- 全局依赖
+  		所有继承parent项目的子模块都会引入全局依赖
+   -->
+  <dependencies>
+  	<!-- spring boot web -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    
+    <!-- spring boot starter test -->
+    <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<version>1.5.4.RELEASE</version>
+		<scope>test</scope>
+	</dependency>
+    
+    <!-- junit -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <!-- 自定义依赖
+  		只有子模块显示应用改jar包，才会引入该依赖
+   -->
+  <dependencyManagement>
+  	<dependencies>
+  		<!-- spring boot starter data redis -->
+  		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>1.5.4.RELEASE</version>
+		</dependency>
+  	
+	    <!-- guava -->
+<!-- 		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>22.0</version>
+		</dependency> -->
+		
+		<!-- gson -->
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>2.8.1</version>
+		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  
+  	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
