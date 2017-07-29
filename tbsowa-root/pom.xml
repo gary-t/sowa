@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>pers.tbsowa.root</groupId>
   <artifactId>tbsowa-root</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-RELEASE</version>
   <packaging>pom</packaging>
   <name>tbsowa-root</name>
   <description>Build for personal learning, Sowa equals software</description>
@@ -12,6 +12,8 @@
   <!-- 模块聚合 -->
   <modules>
   	<module>../tbsowa-core</module>
+  	<module>../tbsowa-redis</module>
+  	<module>../tbsowa-dubbo</module>
   </modules>
   
   
@@ -79,6 +81,28 @@
 		    <artifactId>gson</artifactId>
 		    <version>2.8.1</version>
 		</dependency>
+		
+		<!-- MyBatis、spring boot整合包 -->
+    	<dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>1.3.0</version>
+		</dependency>
+	    
+	    <!-- mysql 驱动 -->  
+	    <dependency>  
+	        <groupId>mysql</groupId>  
+	        <artifactId>mysql-connector-java</artifactId>  
+	        <version>5.1.6</version>  
+	    </dependency>  
+	    
+	    <!-- 数据库连接池 -->  
+	    <dependency>  
+	        <groupId>com.alibaba</groupId>  
+	        <artifactId>druid</artifactId>  
+	        <version>1.0.5</version>  
+	    </dependency> 
+	    
   	</dependencies>
   </dependencyManagement>
   
