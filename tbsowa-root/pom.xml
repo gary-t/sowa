@@ -103,6 +103,13 @@
 	        <version>1.0.5</version>  
 	    </dependency> 
 	    
+	    <!-- pagehelper -->
+	    <dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper</artifactId>
+		    <version>5.0.0</version>
+		</dependency>
+	    
   	</dependencies>
   </dependencyManagement>
   

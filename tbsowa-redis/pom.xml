@@ -17,7 +17,7 @@
 		<dependency>
 			<groupId>pers.tbsowa.core</groupId>
   			<artifactId>tbsowa-core</artifactId>
-  			<version>0.0.1-RELEASE</version>
+  			<version>0.0.1-SNAPSHOT</version>
   			<exclusions>
   				<exclusion>
   					<groupId>org.springframework.boot</groupId>

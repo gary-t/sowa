@@ -4,10 +4,10 @@
     <groupId>pers.tbsowa.root</groupId>
     <artifactId>tbsowa-root</artifactId>
     <version>0.0.1-RELEASE</version>
-    <relativePath>../tbsowa-root/pom.xml</relativePath>
   </parent>
   <groupId>pers.tbsowa.core</groupId>
   <artifactId>tbsowa-core</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <name>tbsowa-core</name>
   
   <dependencies>
