@@ -1,4 +1,4 @@
-package pers.tbsowa.root.utils;
+package pers.tbsowa.common.utils;
 
 import java.util.UUID;
 

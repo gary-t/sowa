@@ -1,4 +1,4 @@
-package pers.tbsowa.root.commons;
+package pers.tbsowa.common.dto;
 
 import java.io.Serializable;
 
@@ -7,11 +7,11 @@ public class SimplePage implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	/**页码*/
-	private int pageNum;
+	private int pageNum=1;
 	/**每页显示数量*/
-	private int pageSize;
+	private int pageSize=10;
 	/**是否进行count查询*/
-	private boolean count;
+	private boolean count=Boolean.TRUE;
 	public int getPageNum() {
 		return pageNum;
 	}

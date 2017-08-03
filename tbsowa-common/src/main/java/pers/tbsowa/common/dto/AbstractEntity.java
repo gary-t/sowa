@@ -1,4 +1,4 @@
-package pers.tbsowa.root.commons;
+package pers.tbsowa.common.dto;
 
 import java.io.Serializable;
 import java.util.Map;
