@@ -1,4 +1,4 @@
-package pers.tbsowa.core.utils;
+package pers.tbsowa.core;
 
 /**
  * Hello world!

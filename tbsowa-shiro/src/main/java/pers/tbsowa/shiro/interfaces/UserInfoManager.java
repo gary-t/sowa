@@ -1,5 +1,7 @@
 package pers.tbsowa.shiro.interfaces;
 
+import org.springframework.stereotype.Service;
+
 /**
  *  备注：1.需要用户实际业务中实现此接口，以提供用户认证、权限认证
  *

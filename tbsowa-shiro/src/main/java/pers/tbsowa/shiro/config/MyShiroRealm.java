@@ -12,13 +12,20 @@ import pers.tbsowa.shiro.utils.MD5Utils;
 
 public class MyShiroRealm extends AuthorizingRealm{
 
-    @Autowired
 	private UserInfoManager userInfoManager;
-
-	/*public MyShiroRealm(UserInfoManager userInfoManager){
+	
+/*	public MyShiroRealm(UserInfoManager userInfoManager){
 	    super();
 		this.userInfoManager = userInfoManager;
 	}*/
+
+	public UserInfoManager getUserInfoManager() {
+		return userInfoManager;
+	}
+
+	public void setUserInfoManager(UserInfoManager userInfoManager) {
+		this.userInfoManager = userInfoManager;
+	}
 
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection arg0) {

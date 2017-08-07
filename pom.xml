@@ -13,9 +13,9 @@
   <modules>
   	<module>tbsowa-core</module>
 	<module>tbsowa-common</module>
-  	<module>tbsowa-redis</module>
   	<module>tbsowa-dubbo</module>
 	<module>tbsowa-shiro</module>
+  	<module>tbsowa-redis</module>
   </modules>
   
   
