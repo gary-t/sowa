@@ -5,12 +5,14 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import pers.tbsowa.shiro.interfaces.Authorizable;
 import pers.tbsowa.shiro.interfaces.UserInfoManager;
 import pers.tbsowa.shiro.utils.MD5Utils;
 
 public class MyShiroRealm extends AuthorizingRealm{
 
+    @Autowired
 	private UserInfoManager userInfoManager;
 
 	/*public MyShiroRealm(UserInfoManager userInfoManager){
