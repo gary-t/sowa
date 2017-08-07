@@ -1,9 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>pers.tbsowa.root</groupId>
-    <artifactId>tbsowa-root</artifactId>
-    <version>0.0.1-RELEASE</version>
+      <groupId>pers.tbsowa.sowa</groupId>
+      <artifactId>sowa</artifactId>
+      <version>0.0.1-RELEASE</version>
+	<!--<relativePath>../tbsowa-root/pom.xml</relativePath>-->
   </parent>
   <groupId>pers.tbsowa.redis</groupId>
   <artifactId>tbsowa-redis</artifactId>
@@ -16,8 +17,8 @@
 
 		<dependency>
 			<groupId>pers.tbsowa.core</groupId>
-  			<artifactId>tbsowa-core</artifactId>
-  			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>tbsowa-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
   			<exclusions>
   				<exclusion>
   					<groupId>org.springframework.boot</groupId>

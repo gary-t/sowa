@@ -1,15 +1,14 @@
 package pers.tbsowa.redis.utils;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
+import pers.tbsowa.core.utils.JSONUtils;
 
-import pers.tbsowa.root.utils.JSONUtils;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class IRedisUtil {
 	

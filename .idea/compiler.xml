@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="tbsowa-common" />
+        <module name="tbsowa-core" />
+        <module name="tbsowa-dubbo" />
+        <module name="tbsowa-redis" />
+        <module name="tbsowa-shiro" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="sowa" target="1.8" />
+      <module name="tbsowa-common" target="1.5" />
+      <module name="tbsowa-core" target="1.8" />
+      <module name="tbsowa-dubbo" target="1.8" />
+      <module name="tbsowa-redis" target="1.8" />
+      <module name="tbsowa-shiro" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
