@@ -4,26 +4,15 @@ import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.apache.shiro.util.ByteSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import pers.tbsowa.shiro.interfaces.Authorizable;
 import pers.tbsowa.shiro.interfaces.UserInfoManager;
-import pers.tbsowa.shiro.utils.MD5Utils;
 
 public class MyShiroRealm extends AuthorizingRealm{
 
 	private UserInfoManager userInfoManager;
-	
-/*	public MyShiroRealm(UserInfoManager userInfoManager){
+
+	public MyShiroRealm(UserInfoManager userInfoManager){
 	    super();
-		this.userInfoManager = userInfoManager;
-	}*/
-
-	public UserInfoManager getUserInfoManager() {
-		return userInfoManager;
-	}
-
-	public void setUserInfoManager(UserInfoManager userInfoManager) {
 		this.userInfoManager = userInfoManager;
 	}
 

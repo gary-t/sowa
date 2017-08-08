@@ -31,7 +31,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="sowa" target="1.8" />
-      <module name="tbsowa-common" target="1.5" />
+      <module name="tbsowa-common" target="1.8" />
       <module name="tbsowa-core" target="1.8" />
       <module name="tbsowa-dubbo" target="1.8" />
       <module name="tbsowa-redis" target="1.8" />

@@ -1,15 +1,20 @@
 package pers.tbsowa.shiro.config;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import pers.tbsowa.shiro.interfaces.Authorizable;
 import pers.tbsowa.shiro.interfaces.UserInfoManager;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Shiro 配置
@@ -21,6 +26,8 @@ import pers.tbsowa.shiro.interfaces.UserInfoManager;
 
 @Configuration
 public class IShiroAutoConfiguration {
+
+	private static Log log = LogFactory.getLog(IShiroAutoConfiguration.class);
 
 	/**
 	 * ShiroFilterFactoryBean 处理拦截资源文件问题。
@@ -60,17 +67,40 @@ public class IShiroAutoConfiguration {
 	}
 	
 	@Bean
-	public SecurityManager securityManager(){
+	public SecurityManager securityManager(Realm realm){
 		DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-		securityManager.setRealm(myShiroRealm());
+//		securityManager.setRealm(myShiroRealm(userInfoManager));
+		securityManager.setRealm(realm);
 		return securityManager;
 	}
 	
 	@Bean
-	public MyShiroRealm myShiroRealm(){
-		MyShiroRealm myShiroRealm = new MyShiroRealm();
+	public MyShiroRealm myShiroRealm(UserInfoManager userInfoManager){
+		MyShiroRealm myShiroRealm = new MyShiroRealm(userInfoManager);
 		myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());;
 		return myShiroRealm;
+	}
+
+	@Bean
+	@ConditionalOnMissingBean
+	public UserInfoManager userInfoManager() {
+		return new MockUserInfoManager();
+	}
+
+	private class MockUserInfoManager implements UserInfoManager{
+
+		private String errorString = "AccountManager is not implemented. Please create a bean implement " + UserInfoManager.class;
+
+		MockUserInfoManager() {
+			if (log.isErrorEnabled()) {
+				log.error(errorString);
+			}
+		}
+
+		@Override
+		public Authorizable getUserInfoByUsername(String userName) {
+			throw new UnsupportedOperationException(errorString);
+		}
 	}
 	
 	@Bean
