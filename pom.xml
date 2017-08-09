@@ -16,6 +16,7 @@
   	<module>tbsowa-dubbo</module>
 	<module>tbsowa-shiro</module>
   	<module>tbsowa-redis</module>
+  	<module>tbsowa-kaptcha</module>
   </modules>
   
   
@@ -31,38 +32,34 @@
 	<version>1.5.4.RELEASE</version>
   </parent>
   
-  <!-- 全局依赖
-  		所有继承parent项目的子模块都会引入全局依赖
-   -->
-  <dependencies>
-  	<!-- spring boot web -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    
-    <!-- spring boot starter test -->
-    <dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-test</artifactId>
-		<version>1.5.4.RELEASE</version>
-		<scope>test</scope>
-	</dependency>
-    
-    <!-- junit -->
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
-        <scope>test</scope>
-    </dependency>
-  </dependencies>
-  
   <!-- 自定义依赖
   		只有子模块显示应用改jar包，才会引入该依赖
    -->
   <dependencyManagement>
   	<dependencies>
+	  	<!-- spring boot web -->
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-web</artifactId>
+	        <version>1.5.4.RELEASE</version>
+	    </dependency>
+	    
+	    <!-- spring boot starter test -->
+	    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>1.5.4.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+	    
+	    <!-- junit -->
+	    <dependency>
+	        <groupId>junit</groupId>
+	        <artifactId>junit</artifactId>
+	        <version>4.12</version>
+	        <scope>test</scope>
+	    </dependency>
+	    
   		<!-- spring boot starter data redis -->
   		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -110,6 +107,13 @@
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-spring</artifactId>
 			<version>1.4.0</version>
+		</dependency>
+		
+		<!-- kaptcha -->
+		<dependency>  
+		    <groupId>com.github.penggle</groupId>  
+		    <artifactId>kaptcha</artifactId>  
+		    <version>2.3.2</version>  
 		</dependency>
   	</dependencies>
   </dependencyManagement>

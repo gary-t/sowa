@@ -12,13 +12,13 @@ import java.util.concurrent.TimeUnit;
 
 public class IRedisUtil {
 	
-    private RedisTemplate<String, ?> redisTemplate;
+    private static RedisTemplate<String, ?> redisTemplate;
     
 	public IRedisUtil(RedisTemplate<String, ?> redisTemplate) {
 		this.redisTemplate = redisTemplate;
 	}
 
-	public boolean set(final String key, final String value) {
+	public static boolean set(final String key, final String value) {
 		return redisTemplate.execute(new RedisCallback<Boolean>(){
 			@Override
 			public Boolean doInRedis(RedisConnection connection)
@@ -30,7 +30,7 @@ public class IRedisUtil {
 		});
 	}
 
-	public String get(final String key) {
+	public static String get(final String key) {
 		return redisTemplate.execute(new RedisCallback<String>(){
 			@Override
 			public String doInRedis(RedisConnection connection)
@@ -48,16 +48,16 @@ public class IRedisUtil {
 	 * @param expire
 	 * @return
 	 */
-	public boolean expire(final String key, long expire) {
+	public static boolean expire(final String key, long expire) {
 		return redisTemplate.expire(key, expire, TimeUnit.SECONDS);
 	}
 
-	public <T> boolean setList(String key, List<T> list) {
+	public static <T> boolean setList(String key, List<T> list) {
 		String value = JSONUtils.toJson(list);
 		return set(key,value);
 	}
 
-	public <T> List<T> getList(String key, Class<T> clz) {
+	public static <T> List<T> getList(String key, Class<T> clz) {
 		String json = get(key);
 		if(json!=null){
 			List<T> list = JSONUtils.toList(json, clz);
@@ -72,7 +72,7 @@ public class IRedisUtil {
 	 * @param obj
 	 * @return
 	 */
-	public long lpush(final String key, Object obj) {
+	public static long lpush(final String key, Object obj) {
 		final String value = JSONUtils.toJson(obj);
 		return redisTemplate.execute(new RedisCallback<Long>(){
 			@Override
@@ -90,7 +90,7 @@ public class IRedisUtil {
 	 * @param obj
 	 * @return
 	 */
-	public long rpush(final String key, Object obj) {
+	public static long rpush(final String key, Object obj) {
 		final String value = JSONUtils.toJson(obj);
 		return redisTemplate.execute(new RedisCallback<Long>(){
 			@Override
@@ -107,7 +107,7 @@ public class IRedisUtil {
 	 * @param key
 	 * @return
 	 */
-	public String lpop(final String key) {
+	public static String lpop(final String key) {
 		return redisTemplate.execute(new RedisCallback<String>(){
 			@Override
 			public String doInRedis(RedisConnection connection)
