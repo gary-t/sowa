@@ -1,20 +1,23 @@
 package pers.tbsowa.redis.utils;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.RedisSerializer;
-import pers.tbsowa.core.utils.JSONUtils;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+import pers.tbsowa.core.utils.JSONUtils;
 
 public class IRedisUtil {
 	
-    private static RedisTemplate<String, ?> redisTemplate;
+    private static RedisTemplate<String, Object> redisTemplate;
     
-	public IRedisUtil(RedisTemplate<String, ?> redisTemplate) {
+	@SuppressWarnings("static-access")
+	public IRedisUtil(RedisTemplate<String, Object> redisTemplate) {
 		this.redisTemplate = redisTemplate;
 	}
 
@@ -28,6 +31,12 @@ public class IRedisUtil {
 				return true;
 			}
 		});
+	}
+	
+	public static boolean set(final String key, final String value, long timeout, TimeUnit unit) {
+		ValueOperations<String, Object>  valueOperations = redisTemplate.opsForValue();
+		valueOperations.set(key, value, timeout, unit);
+		return true;
 	}
 
 	public static String get(final String key) {

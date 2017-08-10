@@ -42,7 +42,7 @@ public class IRedisAutoConfiguration{
     }
 
     @Bean
-    public IRedisUtil iRedisUtil(RedisTemplate<String, ?> redisTemplate){
+    public IRedisUtil iRedisUtil(RedisTemplate<String, Object> redisTemplate){
 		return new IRedisUtil(redisTemplate);
     }
 }
