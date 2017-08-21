@@ -25,15 +25,18 @@
         <module name="tbsowa-common" />
         <module name="tbsowa-core" />
         <module name="tbsowa-dubbo" />
+        <module name="tbsowa-kaptcha" />
         <module name="tbsowa-redis" />
         <module name="tbsowa-shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="javasocket" target="1.5" />
       <module name="sowa" target="1.8" />
       <module name="tbsowa-common" target="1.8" />
       <module name="tbsowa-core" target="1.8" />
       <module name="tbsowa-dubbo" target="1.8" />
+      <module name="tbsowa-kaptcha" target="1.8" />
       <module name="tbsowa-redis" target="1.8" />
       <module name="tbsowa-shiro" target="1.8" />
     </bytecodeTargetLevel>

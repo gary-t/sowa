@@ -51,6 +51,11 @@ public class IRedisUtil {
 		});
 	}
 
+	public static boolean delete(String key){
+		redisTemplate.delete(key);
+		return true;
+	}
+	
 	/**
 	 * expire 为给定 key 设置过期时间
 	 * @param key

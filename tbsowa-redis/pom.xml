@@ -8,7 +8,7 @@
   </parent>
   <groupId>pers.tbsowa.redis</groupId>
   <artifactId>tbsowa-redis</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   
 	<dependencies>
 		<dependency>
@@ -19,7 +19,7 @@
 		<dependency>
 			<groupId>pers.tbsowa.core</groupId>
 			<artifactId>tbsowa-core</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.2-SNAPSHOT</version>
   			<exclusions>
   				<exclusion>
   					<groupId>org.springframework.boot</groupId>

@@ -7,10 +7,15 @@
   </parent>
   <groupId>pers.tbsowa.core</groupId>
   <artifactId>tbsowa-core</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <name>tbsowa-core</name>
   
   <dependencies>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+          <version>1.5.4.RELEASE</version>
+      </dependency>
 	<dependency>
 	    <groupId>com.google.code.gson</groupId>
 	    <artifactId>gson</artifactId>

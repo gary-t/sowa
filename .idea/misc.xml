@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/tbsowa-root/pom.xml" />
         <option value="$PROJECT_DIR$/tbsowa-common/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../javasocket/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

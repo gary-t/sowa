@@ -4,8 +4,8 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tbsowa-core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tbsowa-dubbo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tbsowa-kaptcha" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tbsowa-redis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/tbsowa-root" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tbsowa-shiro" charset="UTF-8" />
   </component>
 </project>
